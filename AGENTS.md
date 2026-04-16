@@ -16,8 +16,9 @@
 - AI 主动维护本文件，确保跨会话记忆不丢
 
 ## 输出记录规则
-- 每次调用 confluence-architect skill 生成架构方案时，必须将输入和输出记录到 `outputs/output.md+日期` 
-- 必须记录：时间、哪个子代理执行、输入内容、完整输出
+- 每次调用 confluence-architect skill 生成架构方案时，必须将输入和输出记录到 `outputs/output+time.md` 
+- 每次输入都会新增一个output+time.md文件
+- output+time.md文件必须记录：时间、哪个子代理执行、输入内容、完整输出
 
 ## Git 仓库
 - GitHub: https://github.com/daqiao123456/confluence-architect
@@ -39,7 +40,7 @@
 1. 读 AGENTS.md（本文件）获取上下文
 2. 读 Target/Description.md 和 Target/Mind Map.md 作为评判标准
 3. 读 skills/confluence-architect/SKILL.md 当前版本
-4. 用测试用例运行 skill（委派子代理执行 skill prompt）
+4. background异步方式委派子代理Sisyphus-Junior 运行 skill
 5. 将输出与 Target 对比，记录差距到下方「迭代日志」
 6. 修改 skill 文件修复差距
 7. git commit + push
@@ -73,5 +74,18 @@
   6. ✅ 度量四指标齐全（轮次1问题已修复）
 - 修复：在 SKILL.md 中加强四处约束——列文/列位/成树强制与列事对象组一一对应，治理生命周期要求明确触发角色
 - 状态：已修复，待轮次 3 验证
+
+#### 轮次 3
+- 测试输入：「公司背景：中型互联网公司，主营 SaaS 产品。部门：技术部。」
+- 差距发现：无。全部 10 模块完整输出，具体验证：
+  1. ✅ 道法器三总纲齐全
+  2. ✅ 列事 6 大类 20 对象组，与 ref.md 一致
+  3. ✅ 列文矩阵 20 行×4 列，所有对象组一个不漏
+  4. ✅ 容器清单 3 个，标注覆盖对象组
+  5. ✅ 列位表 23 行（20 对象组 + 3 容器），全覆盖
+  6. ✅ 成树 6 个一级目录与 6 大类一一对应，4 层以内
+  7. ✅ 治理生命周期每阶段标明触发角色
+  8. ✅ 度量四指标 + 衡量方式 + 基线值
+- 状态：**达标，迭代结束**
 
 ---
