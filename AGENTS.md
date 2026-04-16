@@ -15,9 +15,37 @@
 - 高度浓缩，不要废话
 - AI 主动维护本文件，确保跨会话记忆不丢
 
+## 输出记录规则（重要）
+
+每次调用 confluence-architect skill 生成架构方案时，必须将输入和输出记录到 `outputs/output.md`。
+
+### 记录格式
+
+```markdown
+---
+
+## 记录 N
+
+- 时间：YYYY-MM-DD HH:MM (UTC)
+- 执行者：子代理类型 + category（如 Sisyphus-Junior / deep）
+- 输入：
+  - 公司背景：xxx
+  - 目标部门：xxx
+
+### 输出
+
+（完整架构方案粘贴在此）
+```
+
+### 规则
+1. 每次运行 skill 后，主代理负责将子代理的输出追加到 `outputs/output.md`
+2. 必须记录：时间、哪个子代理执行、输入内容、完整输出
+3. 多次运行按顺序追加，不覆盖历史记录
+4. output.md 纳入 git 版本控制，随 AGENTS.md 一起提交
+
 ## Git 仓库
 - GitHub: https://github.com/daqiao123456/confluence-architect
-- 每次修改 skill 后，必须同步提交 AGENTS.md + skills/ 到 GitHub
+- 每次修改 skill 后，必须同步提交 AGENTS.md + skills/ + outputs/ 到 GitHub
 - git remote 已配置，直接 git add/commit/push 即可
 
 ## 自测迭代循环（重要）
