@@ -1,14 +1,14 @@
 # Confluence 知识库架构 Skill 项目
 
 ## 唯一目标
-完善 `skills/confluence-architect.yaml`，使其能准确输出任意部门的 Confluence 知识库架构方案。
+完善 `skills/confluence-architect/SKILL.md`，使其能准确输出任意部门的 Confluence 知识库架构方案。
 
 ## 方法论
 读 `Target/Description.md`（体系描述）和 `Target/Mind Map.md`（思维导图）。不要凭记忆，每次都读。
 
 ## Skill 文件
-- `skills/confluence-architect.yaml` — 主 skill，输入背景+部门→直出完整架构方案
-- `skills/confluence-architect.ref.md` — APQC 速查 + 平台硬约束 + 治理参考（合并文件）
+- `skills/confluence-architect/SKILL.md` — 主 skill（标准 SKILL.md 格式），输入背景+部门→直出完整架构方案
+- `skills/confluence-architect/confluence-architect.ref.md` — APQC 速查 + 平台硬约束 + 治理参考（合并文件）
 
 ## 用户偏好
 - 中文
@@ -33,7 +33,7 @@
 ### 每轮流程
 1. 读 AGENTS.md（本文件）获取上下文
 2. 读 Target/Description.md 和 Target/Mind Map.md 作为评判标准
-3. 读 skills/confluence-architect.yaml 当前版本
+3. 读 skills/confluence-architect/SKILL.md 当前版本
 4. 用测试用例运行 skill（委派子代理执行 skill prompt）
 5. 将输出与 Target 对比，记录差距到下方「迭代日志」
 6. 修改 skill 文件修复差距

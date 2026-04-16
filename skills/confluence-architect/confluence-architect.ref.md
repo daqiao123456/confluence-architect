@@ -1,6 +1,6 @@
 # Confluence 架构师参考手册
 
-供 confluence-architect.yaml 运行时读取。
+供 confluence-architect SKILL.md 运行时读取。
 
 ---
 
