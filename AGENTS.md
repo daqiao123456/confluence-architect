@@ -4,7 +4,7 @@
 完善 `skills/confluence-architect/SKILL.md`，使其能根据公司规模（五档）准确输出匹配深度的 Confluence 知识库架构方案。
 
 ## 方法论
-读 `Target/Description.md`（体系描述）和 `Target/Mind Map.md`（思维导图）。不要凭记忆，每次都读。
+读 `Target/Description.md`（体系描述）和 `Target/Mind Map.md`（思维导图）和 `Target/Scale.md`（规模适配之术）。不要凭记忆，每次都读。
 
 ## Skill 文件
 - `skills/confluence-architect/SKILL.md` — 主 skill（标准 SKILL.md 格式），输入背景+部门+规模→按档位直出架构方案
