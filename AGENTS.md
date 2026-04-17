@@ -4,11 +4,12 @@
 完善 `skills/confluence-architect/SKILL.md`，使其能根据公司规模（五档）准确输出匹配深度的 Confluence 知识库架构方案。
 
 ## 方法论
-读 `Target/Description.md`（体系描述）和 `Target/Mind Map.md`（思维导图）和 `Target/Scale.md`（规模适配之术）。不要凭记忆，每次都读。
+读 `Target/Description.md`（体系描述）和 `Target/Scale.md`（规模适配之术）。不要凭记忆，每次都读。
 
 ## Skill 文件
-- `skills/confluence-architect/SKILL.md` — 主 skill（标准 SKILL.md 格式），输入背景+部门+规模→按档位直出架构方案
-- `skills/confluence-architect/confluence-architect.ref.md` — APQC 速查 + 平台硬约束 + 治理参考 + 规模适配速查表（合并文件，共八节）
+- `skills/confluence-architect/SKILL.md` — 主 skill（执行协议），输入背景+部门+规模→按档位直出架构方案
+- `skills/confluence-architect/confluence-architect.ref.md` — 数据字典：APQC 速查 + 平台硬约束 + 治理参考 + 规模适配补充细节（共八节）
+- `skills/confluence-architect/confluence-architect.rubric.md` — 评分标准：硬门（pass/fail）+ 加权维度（1-5分）
 
 ## 用户偏好
 - 中文
@@ -118,5 +119,22 @@
   - 用户确认"多少层不重要，实用重要"——层数约束可务实放宽
 - 状态：**达标**
 - 待改进：SKILL.md 中Ⅰ档成树层数约束可考虑从"严格2层"改为"以2层为主，按需放宽"
+
+#### 架构精简（马斯克方法）
+- 背景：5个文件有大量重叠，用"质疑-删除-简化"方法精简
+- 调研：AI agent skill 设计最佳实践（CrewAI/OpenAI/Anthropic/OpenClaw），评分标准设计（LLM-as-judge/RAGAS/DeepEval）
+- 变更内容：
+  1. **删除** Target/Mind Map.md（与 Description.md 100%信息重复）
+  2. **新建** confluence-architect.rubric.md（评分标准：7个硬门 + 4个加权维度）
+  3. **ref.md 第八节去重**：与 Scale.md 重复的五档定义/模块矩阵/反模式/升档信号/降档顺序/迁移原则全部改为引用 Scale.md，只保留 Scale.md 没有的执行细节（Ⅰ档对应关系、Ⅱ档触发条件、入口层级、降档触发条件、验证指标、Ⅳ档治理主体）
+  4. **SKILL.md 重构**：新增输入 Schema 表、参考资料表（4个文件职责说明）、方法论总纲标注源头、各步骤引用改为 Target/Scale.md
+  5. **AGENTS.md**：去掉 Mind Map.md 引用，新增 rubric.md 说明
+- 文件架构（精简后）：
+  - Target/Description.md — 方法论铁律（不动）
+  - Target/Scale.md — 规模适配铁律（不动）
+  - SKILL.md — 执行协议（引用 Target，不内联）
+  - ref.md — 数据字典（去重后，只保留执行细节）
+  - rubric.md — 评分标准（新建）
+- 状态：**已完成，待自测验证**
 
 ---
